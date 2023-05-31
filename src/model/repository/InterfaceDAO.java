@@ -6,9 +6,13 @@ import java.util.List;
 
 public interface InterfaceDAO {
     void save(Laptop laptop);
+
     List<Laptop> getLaptopList();
+
     Laptop findById(long id);
+
     boolean deleteById(long id);
+
     boolean update(long id);
 
 }

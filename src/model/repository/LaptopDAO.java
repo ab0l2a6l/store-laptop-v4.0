@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class LaptopDAO implements InterfaceDAO {
     List<Laptop> laptopList = new ArrayList<>();
     Scanner input = StaticScanner.getData();
+
     @Override
     public void save(Laptop laptop) {
         laptopList.add(laptop);
@@ -41,9 +42,8 @@ public class LaptopDAO implements InterfaceDAO {
 
     @Override
     public boolean update(long id) {
-        Laptop laptop =  findById(id);
-        if (laptop != null)
-        {
+        Laptop laptop = findById(id);
+        if (laptop != null) {
             System.out.print("insert new laptop name: ");
             laptop.setLaptopName(input.nextLine());
 

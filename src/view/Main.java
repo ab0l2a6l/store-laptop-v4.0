@@ -1,4 +1,4 @@
- package view;
+package view;
 
 import common.StaticScanner;
 import controler.LaptopControler;
@@ -49,8 +49,7 @@ public class Main {
                     boolean laptopUpdate = laptopControler.sendDataToServiceForUpdate(input.nextLong());
                     if (laptopUpdate) {
                         System.out.println("updated");
-                    }
-                    else System.out.println("wrong id");
+                    } else System.out.println("wrong id");
                 }
 
                 case 5 -> {

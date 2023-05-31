@@ -7,11 +7,11 @@ import model.server.LaptopService;
 public class LaptopControler {
     InterfaceService interfaceServer = new LaptopService();
 
-    public void sendDataToServiceForSave(Laptop laptop){
+    public void sendDataToServiceForSave(Laptop laptop) {
         interfaceServer.sendDataToDAOForSave(laptop);
     }
 
-    public Laptop sendIdToServiceForSearch(long id){
+    public Laptop sendIdToServiceForSearch(long id) {
         return interfaceServer.sendIdToDAOForSearch(id);
     }
 
@@ -19,7 +19,7 @@ public class LaptopControler {
         return interfaceServer.sendIdToDAOForDelete(id);
     }
 
-    public boolean sendDataToServiceForUpdate(long id){
+    public boolean sendDataToServiceForUpdate(long id) {
         return interfaceServer.sendDataToDAOForUpdate(id);
     }
 }
