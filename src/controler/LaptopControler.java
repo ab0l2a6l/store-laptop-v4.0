@@ -19,7 +19,7 @@ public class LaptopControler {
         return interfaceServer.sendIdToDAOForDelete(id);
     }
 
-    public Laptop sendDataToServiceForUpdate(long id){
+    public boolean sendDataToServiceForUpdate(long id){
         return interfaceServer.sendDataToDAOForUpdate(id);
     }
 }

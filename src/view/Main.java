@@ -1,4 +1,4 @@
-package view;
+ package view;
 
 import common.StaticScanner;
 import controler.LaptopControler;
@@ -46,26 +46,9 @@ public class Main {
 
                 case 4 -> {
                     System.out.print("insert id for update: ");
-                    Laptop laptop = laptopControler.sendDataToServiceForUpdate(input.nextLong());
-
-                    if (laptop != null) {
-                        menuForUpdate();
-                        int temp = input.nextInt();
-                        input.nextLine();
-
-                        switch (temp) {
-                            case 1 -> {
-                                System.out.print("insert new laptop name: ");
-                                laptop.setLaptopName(input.nextLine());
-                            }
-
-                            case 2 -> {
-                                System.out.print("insert new id: ");
-                                laptop.setId(input.nextLong());
-                            }
-
-                            default -> System.out.println("wrong number");
-                        }
+                    boolean laptopUpdate = laptopControler.sendDataToServiceForUpdate(input.nextLong());
+                    if (laptopUpdate) {
+                        System.out.println("updated");
                     }
                     else System.out.println("wrong id");
                 }

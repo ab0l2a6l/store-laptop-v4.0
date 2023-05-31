@@ -1,13 +1,15 @@
 package model.repository;
 
+import common.StaticScanner;
 import model.entity.Laptop;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class LaptopDAO implements InterfaceDAO {
     List<Laptop> laptopList = new ArrayList<>();
-
+    Scanner input = StaticScanner.getData();
     @Override
     public void save(Laptop laptop) {
         laptopList.add(laptop);
@@ -38,8 +40,19 @@ public class LaptopDAO implements InterfaceDAO {
     }
 
     @Override
-    public Laptop update(long id) {
-        return findById(id);
+    public boolean update(long id) {
+        Laptop laptop =  findById(id);
+        if (laptop != null)
+        {
+            System.out.print("insert new laptop name: ");
+            laptop.setLaptopName(input.nextLine());
+
+            System.out.print("insert new id: ");
+            laptop.setId(input.nextLong());
+
+            return true;
+        }
+        return false;
     }
 
 }

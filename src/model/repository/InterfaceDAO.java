@@ -9,6 +9,6 @@ public interface InterfaceDAO {
     List<Laptop> getLaptopList();
     Laptop findById(long id);
     boolean deleteById(long id);
-    Laptop update(long id);
+    boolean update(long id);
 
 }
