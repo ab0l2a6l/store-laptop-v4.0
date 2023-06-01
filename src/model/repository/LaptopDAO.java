@@ -41,18 +41,11 @@ public class LaptopDAO implements InterfaceDAO {
     }
 
     @Override
-    public boolean update(long id) {
-        Laptop laptop = findById(id);
-        if (laptop != null) {
-            System.out.print("insert new laptop name: ");
-            laptop.setLaptopName(input.nextLine());
+    public void update(Laptop laptop) {
+        Laptop lapUpadet = findById(laptop.getId());
+        lapUpadet.setLaptopName(laptop.getLaptopName());
+        lapUpadet.setId(laptop.getId());
 
-            System.out.print("insert new id: ");
-            laptop.setId(input.nextLong());
-
-            return true;
-        }
-        return false;
     }
 
 }

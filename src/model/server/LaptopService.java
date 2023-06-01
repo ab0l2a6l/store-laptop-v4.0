@@ -23,7 +23,7 @@ public class LaptopService implements InterfaceService {
     }
 
     @Override
-    public boolean sendDataToDAOForUpdate(long id) {
-        return interfaceDAO.update(id);
+    public void sendDataToDAOForUpdate(Laptop laptop) {
+        interfaceDAO.update(laptop);
     }
 }

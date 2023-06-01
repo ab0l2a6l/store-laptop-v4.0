@@ -13,6 +13,6 @@ public interface InterfaceDAO {
 
     boolean deleteById(long id);
 
-    boolean update(long id);
+    void update(Laptop laptop);
 
 }

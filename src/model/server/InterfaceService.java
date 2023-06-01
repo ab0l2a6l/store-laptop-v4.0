@@ -10,5 +10,5 @@ public interface InterfaceService {
 
     boolean sendIdToDAOForDelete(long id);
 
-    boolean sendDataToDAOForUpdate(long id);
+    void sendDataToDAOForUpdate(Laptop laptop);
 }

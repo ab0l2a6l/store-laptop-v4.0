@@ -45,11 +45,29 @@ public class Main {
                 }
 
                 case 4 -> {
+                    Laptop laptop = new Laptop();
                     System.out.print("insert id for update: ");
-                    boolean laptopUpdate = laptopControler.sendDataToServiceForUpdate(input.nextLong());
-                    if (laptopUpdate) {
+                    laptop.setId(input.nextLong());
+                    laptop = laptopControler.sendIdToServiceForSearch(laptop.getId());
+                    if (laptop != null) {
+                        menuForUpdate();
+                        int temp = input.nextInt();
+                        input.nextLine();
+
+                        if (temp == 1)
+                            laptop.setLaptopName(input.nextLine());
+                        else if (temp == 2)
+                            laptop.setId(input.nextLong());
+
+
+                        laptopControler.sendDataToServiceForUpdate(laptop);
                         System.out.println("updated");
-                    } else System.out.println("wrong id");
+                    } else System.out.println("not found");
+
+//                    boolean laptopUpdate = laptopControler.sendDataToServiceForUpdate(input.nextLong());
+//                    if (laptopUpdate) {
+//                        System.out.println("updated");
+//                    } else System.out.println("wrong id");
                 }
 
                 case 5 -> {
